@@ -5,6 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/main.js"></script>
 </head>
 <!-- USER_ARR, userCounts 이미 알고 있음-->
 <body>
@@ -23,11 +25,15 @@
           <p>
             NAME : <%= USER_ARR[i].name %>
           </p>
+          <p>
+            EMAIL : <%= USER_ARR[i].email %>
+          </p>
         </li>
       <% } %>  
     <% } else { %>
       <li>회원 정보가 없습니다</li>
     <% } %>    
   </ul>
+  <img src="/images/cat.jpg" alt="캣">
 </body>
 </html>

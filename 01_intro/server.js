@@ -11,8 +11,8 @@ app.use(cors());
 
 app.use('/', (req, res) => {
   const str = '안녕';
-  // const json = JSON.stringify(str);
-  res.send(str);
+  const json = JSON.stringify(str);
+  res.send(json);
 });
 
 app.listen(PORT, () => {

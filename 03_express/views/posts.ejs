@@ -11,41 +11,34 @@
 <!-- USER_ARR, userCounts 이미 알고 있음-->
 <body>
   <h1>Hello, EJS world!</h1>
-  <h1>회원목록</h1>
+  <h1>글목록</h1>
   <h2>
-    총 회원 수 <%= userCounts %>
+    총 글 수 <%= userCounts %>
   </h2>
   <ul>
     <% if(userCounts > 0) { %>
       <% for(let i = 0; i < userCounts; i++) { %>
         <li>
           <p>
-            ID : <%= USER[i].id %>
+            TITLE : <%= POST[i].title %>
           </p>
           <p>
-            NAME : <%= USER[i].name %>
-          </p>
-          <p>
-            EMAIL : <%= USER[i].email %>
+            CONTENT : <%= POST[i].content %>
           </p>
         </li>
       <% } %>  
     <% } else { %>
-      <li>회원 정보가 없습니다</li>
+      <li>글이 없습니다</li>
     <% } %>    
   </ul>
-  <form action="/users/add" method = "POST">
+  <form action="/posts/add" method = "POST">
     <div>
-      <label>아이디</label>
-      <input type="text" name = "id"/>
+      <label>제목</label>
+      <input type="text" name = "title"/>
     </div>
     <div>
-      <label>이름</label>
-      <input type="text" name = "name"/>
-    </div>
-    <div>
-      <label>이메일</label>
-      <input type="text" name = "email"/>
+      <label>내용</label>
+      <input type="text" name = "content"/>
     </div>
     <button type="submit">제출</button>
   </form>

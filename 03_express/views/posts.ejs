@@ -8,16 +8,17 @@
   <link rel="stylesheet" href="/css/style.css">
   <script src="/js/main.js"></script>
 </head>
-<!-- USER_ARR, userCounts 이미 알고 있음-->
+<!-- USER_ARR, postCounts 이미 알고 있음-->
 <body>
+  <a href="/">홈</a>
   <h1>Hello, EJS world!</h1>
   <h1>글목록</h1>
   <h2>
-    총 글 수 <%= userCounts %>
+    총 글 수 <%= postCounts %>
   </h2>
   <ul>
-    <% if(userCounts > 0) { %>
-      <% for(let i = 0; i < userCounts; i++) { %>
+    <% if(postCounts > 0) { %>
+      <% for(let i = 0; i < postCounts; i++) { %>
         <li>
           <p>
             TITLE : <%= POST[i].title %>

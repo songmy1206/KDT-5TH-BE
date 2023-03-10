@@ -1,4 +1,4 @@
-const lucky = false;
+const lucky = true;
 const promise = new Promise((resolve, reject) => {
   console.log('주식이 오르기를 기다리기 시작합니다!');
   setTimeout(() => {

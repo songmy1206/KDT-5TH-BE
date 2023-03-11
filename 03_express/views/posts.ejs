@@ -26,6 +26,7 @@
           <p>
             CONTENT : <%= POST[i].content %>
           </p>
+          <a href="javascript:void(0)" onclick="deletePost('<%= POST[i].title %>')">삭제</a>
         </li>
       <% } %>  
     <% } else { %>
@@ -44,5 +45,18 @@
     <button type="submit">제출</button>
   </form>
   <img src="/images/cat.jpg" alt="캣">
+  <script>
+    async function deletePost(title){
+      const response = await fetch(`http://localhost:4000/posts/delete/${title}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-type': 'application/json',
+        }
+      })
+      if(response.status === 200) return location.reload();
+      
+      console.log(response);
+    }
+  </script>
 </body>
 </html>
